@@ -1,0 +1,118 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-mind-dark: #1a1520;
+  --color-mind-darker: #110e16;
+  --color-mind-card: #231e2a;
+  --color-mind-border: #3a3344;
+  --color-mind-accent: #e8976b;
+  --color-mind-accent-hover: #f0ad86;
+  --color-mind-accent-soft: #e8976b33;
+  --color-mind-success: #6bcf8e;
+  --color-mind-danger: #e86b6b;
+  --color-mind-info: #6bb3e8;
+  --color-mind-warning: #e8d16b;
+  --color-mind-text: #f0ece6;
+  --color-mind-muted: #9a8fa6;
+  --color-mind-purple: #b088d4;
+  --color-mind-teal: #6bcfc4;
+  --color-mind-rose: #d4889e;
+  --font-family-display: 'Georgia', 'Times New Roman', serif;
+}
+
+@layer base {
+  body {
+    @apply bg-mind-darker text-mind-text antialiased;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-mind-accent/30 text-white;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-family-display);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-mind-accent hover:bg-mind-accent-hover text-mind-darker font-bold py-3 px-6 rounded-xl transition-all duration-200 cursor-pointer inline-flex items-center gap-2 text-sm tracking-wide;
+  }
+
+  .btn-secondary {
+    @apply border border-mind-border hover:border-mind-accent text-mind-muted hover:text-mind-accent py-3 px-6 rounded-xl transition-all duration-200 cursor-pointer inline-flex items-center gap-2 text-sm;
+  }
+
+  .card {
+    @apply bg-mind-card border border-mind-border rounded-2xl p-6;
+  }
+
+  .card-interactive {
+    @apply bg-mind-card border border-mind-border rounded-2xl p-6 hover:border-mind-accent/50 transition-all duration-300 cursor-pointer;
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px rgba(232, 151, 107, 0.15);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 30px rgba(176, 136, 212, 0.15);
+  }
+
+  .fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .slide-in {
+    animation: slide-in 0.4s ease-out;
+  }
+
+  @keyframes slide-in {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .science-callout {
+    @apply bg-mind-purple/10 border border-mind-purple/30 rounded-xl p-5;
+  }
+
+  .exercise-card {
+    @apply bg-mind-accent/5 border-2 border-dashed border-mind-accent/30 rounded-2xl p-6;
+  }
+
+  .obsidian-template {
+    @apply bg-mind-teal/10 border border-mind-teal/30 rounded-xl p-5 font-mono text-sm;
+  }
+
+  .notebook-exercise {
+    @apply bg-mind-rose/10 border border-mind-rose/30 rounded-xl p-5;
+  }
+
+  .stat-number {
+    @apply text-5xl font-black text-mind-accent;
+    font-family: var(--font-family-display);
+  }
+
+  .provocative-data {
+    @apply text-center py-10 px-6 bg-gradient-to-b from-mind-accent/10 to-transparent rounded-2xl border border-mind-accent/20;
+  }
+}
