@@ -5,8 +5,8 @@
   let { currentModule }: { currentModule: number } = $props();
 
   const totalModules = modules.length;
-  const prevModule = currentModule > 1 ? currentModule - 1 : null;
-  const nextModule = currentModule < totalModules ? currentModule + 1 : null;
+  const prevModule = $derived(currentModule > 1 ? currentModule - 1 : null);
+  const nextModule = $derived(currentModule < totalModules ? currentModule + 1 : null);
 </script>
 
 <nav class="mt-12 flex items-center justify-between">

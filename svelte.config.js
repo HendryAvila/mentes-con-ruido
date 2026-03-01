@@ -15,7 +15,7 @@ const config = {
     prerender: {
       handleHttpError: ({ path }) => {
         // Modules 3-20 don't exist yet — they'll be added in future waves
-        if (path.startsWith('/modulo/')) return;
+        if (path.includes('/modulo/')) return;
         throw new Error(`Unexpected 404: ${path}`);
       }
     }

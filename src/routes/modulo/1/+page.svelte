@@ -233,13 +233,14 @@
     {:else}
       <div class="space-y-6 slide-in">
         <div>
-          <label class="block text-sm font-semibold text-mind-text mb-2">
+          <label for="interruptions-slider" class="block text-sm font-semibold text-mind-text mb-2">
             En un dia tipico de trabajo, cuantas veces estimas que cambias de tarea o te interrumpis?
           </label>
           <p class="text-xs text-mind-muted mb-3">
             Incluye: revisar el telefono, abrir redes sociales, responder un mensaje, ir a buscar cafe, una notificacion...
           </p>
           <input
+            id="interruptions-slider"
             type="range"
             min="2"
             max="40"
